@@ -1,19 +1,20 @@
-fun three-stripe-flag(red, blue, white):
-
-overlay-xy(rectangle(220, 20, "solid", blue), 0, -70,
-  overlay-xy(rectangle(20, 160, "solid", blue),-70, 0,
-    overlay-xy(rectangle(220 , 40, "solid", white), 0, -60,
-      overlay-xy(rectangle(40 ,160, "solid", white), -60, 0,
-        rectangle(220, 160, "solid", red)))))
+fun three-stripe-flag(tallx, tally, base, stripe1, stripe2):
+  
+scale-xy(tallx, tally,
+  overlay-xy(rectangle(220, 20, "solid", stripe1), 0, -70,
+    overlay-xy(rectangle(20, 160, "solid", stripe1),-70, 0,
+      overlay-xy(rectangle(220 , 40, "solid", stripe2), 0, -60,
+        overlay-xy(rectangle(40 ,160, "solid", stripe2), -60, 0,
+            rectangle(220, 160, "solid", base))))))
  
 end
 
-Norge = three-stripe-flag("red", "blue", "white")
-Sverige = three-stripe-flag("blue", "gold", "blue")
-Danmark = three-stripe-flag("red", "white", "red")
-Finland = three-stripe-flag("white", "blue", "blue")
-Island = three-stripe-flag("blue", "red", "white")
-Faroyene = three-stripe-flag("white", "blue", "red")
+Norge = three-stripe-flag(1,1, "red", "blue", "white")
+Sverige = three-stripe-flag(1.145,1, "blue", "gold", "blue")
+Danmark = three-stripe-flag(0.95,1, "red", "white", "red")
+Finland = three-stripe-flag(1.19,1, "white", "blue", "blue")
+Island = three-stripe-flag(1.09,1, "blue", "red", "white")
+Faroyene = three-stripe-flag(1,1, "white", "blue", "red")
   
 Norge
 Sverige
